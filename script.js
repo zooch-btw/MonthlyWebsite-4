@@ -5,10 +5,10 @@ let userName = prompt("Hi! Who are you?");
 userName
   ? (document.getElementById(
       "greeting"
-    ).innerHTML = `${userName} score: ${playerScore}`)
+    ).innerHTML = `${userName}'s score: ${playerScore}`)
   : (document.getElementById(
       "greeting"
-    ).innerHTML = `Player score: ${playerScore}`);
+    ).innerHTML = `Player's score: ${playerScore}`);
 
 function plus() {
   playerScore++;
@@ -18,3 +18,8 @@ function plus() {
 function Reset() {
   window.location.reload();
 }
+
+// plays noise on click I WILL WORK ON THIS LATER
+
+const audio = new Audio("video1.mp3");
+audio.play();

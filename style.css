@@ -1,8 +1,10 @@
+
+/* Text */
 #greeting {
 height: 104px;
 color: #000;
 font-family: Inter;
-font-size: 64px;
+font-size: 32px;
 font-weight: 400;
 }
 
@@ -10,21 +12,27 @@ font-weight: 400;
 height: 52px;
 color: #000;
 font-family: Inter;
-font-size: 64px;
+font-size: 32px;
 font-weight: 400;
+}
+/* Buttons */
+button {
+    border: none;
+    width: auto;
+    background-color: #39FF14;;
 }
 
 #img1 {
-width: 231px;
+width: clamp(150px, 20vw, 500px);
 height: 197px;
 }
 
 #img2 {
-width: 231px;
+width: clamp(150px, 20vw, 500px);
 height: 197px;
 }
 
 #img3 {
-width: 231px;
+width: clamp(150px, 20vw, 500px);
 height: 197px;
 }
