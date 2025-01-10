@@ -22,17 +22,28 @@ button {
     background-color: #39FF14;;
 }
 
-#img1 {
-width: clamp(150px, 20vw, 500px);
-height: 197px;
+img {
+    width: clamp(150px, 20vw, 500px);
+    height: 197px;
 }
 
-#img2 {
-width: clamp(150px, 20vw, 500px);
-height: 197px;
+
+#cardboard {
+color: #000;
+font-family: Inter;
+font-size: 36px;
+font-weight: 400;
+padding: 250px 0;
 }
 
-#img3 {
-width: clamp(150px, 20vw, 500px);
-height: 197px;
+#cardboard {
+    color: #000;
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 400;
+    padding: 175px 0;
+    }
+
+#feet2 {
+    padding: 20px;
 }
