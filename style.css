@@ -1,49 +1,68 @@
-
 /* Text */
 #greeting {
-height: 104px;
-color: #000;
-font-family: Inter;
-font-size: 32px;
-font-weight: 400;
+  height: 104px;
+  color: #000;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 400;
 }
 
 #greeting2 {
-height: 52px;
-color: #000;
-font-family: Inter;
-font-size: 32px;
-font-weight: 400;
+  height: 52px;
+  color: #000;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+#game {
+  height: 104px;
+  color: #000;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: left;
+  width: 100%;
+}
+
+#game2 {
+  height: 52px;
+  color: #000;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: right;
+  width: 100%;
 }
 /* Buttons */
 button {
-    border: none;
-    width: auto;
-    background-color: #39FF14;;
+  border: none;
+  width: auto;
+  background-color: #39ff14;
 }
 
 img {
-    width: clamp(150px, 20vw, 500px);
-    height: 197px;
-}
-
-
-#cardboard {
-color: #000;
-font-family: Inter;
-font-size: 36px;
-font-weight: 400;
-padding: 250px 0;
+  width: clamp(150px, 20vw, 500px);
+  height: 197px;
 }
 
 #cardboard {
-    color: #000;
-    font-family: Inter;
-    font-size: 36px;
-    font-weight: 400;
-    padding: 175px 0;
-    }
+  color: #000;
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 400;
+  padding: 20px 0;
+}
 
 #feet2 {
-    padding: 20px;
+  padding: 20px;
+  position: relative;
+  top: 200px;
+}
+
+#battle {
+  text-align: center;
+}
+#videos {
+  padding-top: 300px;
 }
