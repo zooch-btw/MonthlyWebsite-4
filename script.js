@@ -1,11 +1,17 @@
 let playerScore = 0;
 let computerScore = 0;
 let finalmsg = document.getElementById("endtxt");
-document.getElementById("battle").innerHTML = "Who will win?";
+document.getElementById("battle").innerHTML = "Who will come out on top?";
 let playerChoice;
 let userName = prompt("Hi! Who are you?");
 let url;
 let url2;
+let roundCount = 0;
+
+window.onload = function startUp() {
+  userName ? (userName = userName) : (userName = "Player");
+  document.getElementById("greeting").textContent = `${userName}'s score: 0`;
+};
 
 function UsN() {
   switch (playerChoice) {
@@ -42,6 +48,9 @@ function Playerscoreinc() {
 }
 function Computerscoreinc() {
   computerScore++;
+  document.getElementById(
+    "greeting2"
+  ).textContent = `Computer score: ${computerScore}`;
   console.log(computerScore);
 }
 
@@ -75,43 +84,61 @@ const getComputerChoice = () => {
   }
 };
 const determineWinner = (userChoice, computerChoice) => {
+  roundCount++;
   UsN();
   if (userChoice === computerChoice) {
     console.log("This game is a tie!");
-    statement;
   }
   if (userChoice === "rock") {
     if (computerChoice === "paper") {
       console.log("Sorry, computer won!");
-      Playerscoreinc();
+      Computerscoreinc();
     } else {
       console.log("Congratualtions, you won!");
+      Playerscoreinc();
     }
   }
 
   if (userChoice === "paper") {
     if (computerChoice === "scissors") {
+      Computerscoreinc();
       return "Sorry, computer won!";
     } else {
+      Playerscoreinc();
       return "Congratualtions, you won!";
     }
   }
 
   if (userChoice === "scissors") {
     if (computerChoice === "rock") {
+      Computerscoreinc();
       return "Sorry, computer won!";
     } else {
-      return "Congratualtions, you won!";
+      Playerscoreinc();
+      return "Congratulations, you won!";
     }
   }
 };
 
 const playGame = (userChoice) => {
-  const computerChoice = getComputerChoice();
-  playerChoice = userChoice;
-  console.log(`You chose: ${userChoice}`);
-  console.log(`Computer chose: ${computerChoice}`);
-  //update the HTML to show computer choice
-  //update HTML to show userChoice
-  console.log(determineWinner(userChoice, computerChoice));
+  if (roundCount <= 5) {
+    const computerChoice = getComputerChoice();
+    playerChoice = userChoice;
+    console.log(`You chose: ${userChoice}`);
+    console.log(`Computer chose: ${computerChoice}`);
+    //update the HTML to show computer choice
+    //update HTML to show userChoice
+    console.log(determineWinner(userChoice, computerChoice));
+  } else {
+    if (playerScore > computerScore) {
+      //player won
+      document.getElementById("battle").innerHTML = "Good Job!";
+    } else if (computerScore > playerScore) {
+      //computer won
+      document.getElementById("battle").innerHTML = "Skill Issue 💀";
+    } else {
+      //its a tie!
+      document.getElementById("battle").innerHTML = "No winner!";
+    }
+  }
 };
