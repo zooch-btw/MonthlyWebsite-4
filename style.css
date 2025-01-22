@@ -1,3 +1,7 @@
+body {
+  width: 100%;
+}
+
 /* Text */
 #greeting {
   height: 104px;
@@ -21,18 +25,18 @@
   font-family: Inter;
   font-size: 32px;
   font-weight: 400;
-  text-align: left;
-  width: 100%;
+  text-align: center;
+  width: auto;
 }
 
 #game2 {
-  height: 52px;
+  height: 104px;
   color: #000;
   font-family: Inter;
   font-size: 32px;
   font-weight: 400;
-  text-align: right;
-  width: 100%;
+  text-align: center;
+  width: auto;
 }
 /* Buttons */
 button {
@@ -64,4 +68,10 @@ img {
 }
 #videos {
   padding-top: 300px;
+}
+
+.score-tracker {
+  margin: 50px 0;
+  font-weight: bolder;
+  font-size: 64px;
 }

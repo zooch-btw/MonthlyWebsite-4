@@ -6,11 +6,16 @@ let playerChoice;
 let userName = prompt("Hi! Who are you?");
 let url;
 let url2;
-let roundCount = 0;
+let roundCount = 1;
 
 window.onload = function startUp() {
   userName ? (userName = userName) : (userName = "Player");
   document.getElementById("greeting").textContent = `${userName}'s score: 0`;
+  userName
+    ? (document.getElementById("game").innerHTML = `${userName} picked:`)
+    : (document.getElementById("game").innerHTML = `Player picked:`);
+
+  document.getElementById("round").innerHTML = `Round: ${roundCount}`;
 };
 
 function UsN() {
@@ -36,10 +41,10 @@ function UsN() {
   userName
     ? (document.getElementById(
         "game"
-      ).innerHTML = `${userName} picked:  <img src="${url}">`)
+      ).innerHTML = `${userName} picked: <br><img src="${url}">`)
     : (document.getElementById(
         "game"
-      ).innerHTML = `Player picked: <img src="${url}">`);
+      ).innerHTML = `Player picked: <br><img src="${url}">`);
 }
 
 function Playerscoreinc() {
@@ -67,34 +72,40 @@ const getComputerChoice = () => {
       url2 = "its still MASSIVE.jpg";
       document.getElementById(
         "game2"
-      ).innerHTML = `The computer picked: <img src='${url2}'>`;
+      ).innerHTML = `The computer picked:<br> <img src='${url2}'>`;
       return "rock";
     case 1:
       url2 = "jarvis clip that.jpg";
       document.getElementById(
         "game2"
-      ).innerHTML = `The computer picked: <img src='${url2}'>`;
+      ).innerHTML = `The computer picked:<br> <img src='${url2}'>`;
       return "paper";
     case 2:
       url2 = "leking.jpg";
       document.getElementById(
         "game2"
-      ).innerHTML = `The computer picked: <img src='${url2}'>`;
+      ).innerHTML = `The computer picked:<br> <img src='${url2}'>`;
       return "scissors";
   }
 };
 const determineWinner = (userChoice, computerChoice) => {
   roundCount++;
+  document.getElementById("round").innerHTML = `Round: ${roundCount}`;
+
   UsN();
   if (userChoice === computerChoice) {
     console.log("This game is a tie!");
   }
   if (userChoice === "rock") {
     if (computerChoice === "paper") {
-      console.log("Sorry, computer won!");
+      document.getElementById("battle").innerHTML = "Computer wins this round!";
       Computerscoreinc();
+    } else if (computerChoice === "rock") {
+      document.getElementById("battle").innerHTML = "This round is a tie!";
     } else {
-      console.log("Congratualtions, you won!");
+      document.getElementById(
+        "battle"
+      ).innerHTML = `${userName} wins this round!`;
       Playerscoreinc();
     }
   }
@@ -102,26 +113,34 @@ const determineWinner = (userChoice, computerChoice) => {
   if (userChoice === "paper") {
     if (computerChoice === "scissors") {
       Computerscoreinc();
-      return "Sorry, computer won!";
+      document.getElementById("battle").innerHTML = "Computer wins this round!";
+    } else if (computerChoice === "paper") {
+      document.getElementById("battle").innerHTML = "This round is a tie!";
     } else {
       Playerscoreinc();
-      return "Congratualtions, you won!";
+      document.getElementById(
+        "battle"
+      ).innerHTML = `${userName} wins this round!`;
     }
   }
 
   if (userChoice === "scissors") {
     if (computerChoice === "rock") {
       Computerscoreinc();
-      return "Sorry, computer won!";
+      document.getElementById("battle").innerHTML = "Computer wins this round!";
+    } else if (computerChoice === "scissors") {
+      document.getElementById("battle").innerHTML = "This round is a tie!";
     } else {
       Playerscoreinc();
-      return "Congratulations, you won!";
+      document.getElementById(
+        "battle"
+      ).innerHTML = `${userName} wins this round!`;
     }
   }
 };
 
 const playGame = (userChoice) => {
-  if (roundCount <= 5) {
+  if (roundCount < 5) {
     const computerChoice = getComputerChoice();
     playerChoice = userChoice;
     console.log(`You chose: ${userChoice}`);
