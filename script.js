@@ -49,21 +49,22 @@ function UsN() {
 
 function Playerscoreinc() {
   playerScore++;
-  console.log(playerScore);
+  document.getElementById(
+    "greeting"
+  ).textContent = `${userName}'s score: ${playerScore}`;
 }
 function Computerscoreinc() {
   computerScore++;
   document.getElementById(
     "greeting2"
   ).textContent = `Computer score: ${computerScore}`;
-  console.log(computerScore);
 }
 
 function Reset() {
   window.location.reload();
 }
 
-/*CodeAcademy 's code for the Rock, Paper, Scissors game*/
+// CodeAcademy 's code for the Rock, Paper, Scissors game
 
 const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * 3);
@@ -91,50 +92,41 @@ const getComputerChoice = () => {
 const determineWinner = (userChoice, computerChoice) => {
   roundCount++;
   document.getElementById("round").innerHTML = `Round: ${roundCount}`;
-
   UsN();
-  if (userChoice === computerChoice) {
-    console.log("This game is a tie!");
+  if (userChoice == computerChoice) {
+    document.getElementById("battle").innerHTML = "This round is a tie!";
   }
-  if (userChoice === "rock") {
-    if (computerChoice === "paper") {
+  if (userChoice == "rock") {
+    if (computerChoice == "paper") {
       document.getElementById("battle").innerHTML = "Computer wins this round!";
       Computerscoreinc();
-    } else if (computerChoice === "rock") {
-      document.getElementById("battle").innerHTML = "This round is a tie!";
-    } else {
+    } else if (computerChoice == "scissors") {
       document.getElementById(
         "battle"
       ).innerHTML = `${userName} wins this round!`;
       Playerscoreinc();
     }
   }
-
-  if (userChoice === "paper") {
+  if (userChoice == "paper") {
     if (computerChoice === "scissors") {
-      Computerscoreinc();
       document.getElementById("battle").innerHTML = "Computer wins this round!";
-    } else if (computerChoice === "paper") {
-      document.getElementById("battle").innerHTML = "This round is a tie!";
-    } else {
-      Playerscoreinc();
+      Computerscoreinc();
+    } else if (computerChoice == "rock") {
       document.getElementById(
         "battle"
       ).innerHTML = `${userName} wins this round!`;
+      Playerscoreinc();
     }
   }
-
-  if (userChoice === "scissors") {
+  if (userChoice == "scissors") {
     if (computerChoice === "rock") {
       Computerscoreinc();
       document.getElementById("battle").innerHTML = "Computer wins this round!";
-    } else if (computerChoice === "scissors") {
-      document.getElementById("battle").innerHTML = "This round is a tie!";
-    } else {
-      Playerscoreinc();
+    } else if (computerChoice == "paper") {
       document.getElementById(
         "battle"
       ).innerHTML = `${userName} wins this round!`;
+      Playerscoreinc();
     }
   }
 };
@@ -147,7 +139,9 @@ const playGame = (userChoice) => {
     console.log(`Computer chose: ${computerChoice}`);
     //update the HTML to show computer choice
     //update HTML to show userChoice
-    console.log(determineWinner(userChoice, computerChoice));
+    console.log(
+      determineWinner(userChoice.toLowerCase(), computerChoice.toLowerCase())
+    );
   } else {
     if (playerScore > computerScore) {
       //player won
