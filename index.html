@@ -18,28 +18,28 @@
         <!-- place navbar here -->
     </header>
     <main class="container text-center">
-        <div class="">
-            <div class="row score-tracker">
-                <h1 id="greeting" class="col-4"></h1>
-                <div class="col-4" id="round"></div>
-                <h1 id="greeting2" class="col-4">Computer score: 0</h1>
-            </div>
-            <div>
-                <button class="rock" onclick="playGame('rock')">
-                    <h1>(rock)</h1><img class="mx-auto" id=" img1" src="its still MASSIVE.jpg">
-                </button>
-                <button class="paper" onclick="playGame('paper')">
-                    <h1>(paper)</h1><img class="mx-auto" id="img2" src="jarvis clip that.jpg">
-                </button>
-                <button class="scissors" onclick="playGame('scissors')">
-                    <h1>(scissors)</h1><img class="mx-auto" id="img3" src="leking.jpg">
-                </button>
-            </div>
-            <!--reset button-->
-            <button id="othertun" onclick="Reset()">Play again?</button>
+        <div class="row score-tracker">
+            <h1 id="greeting" class="col-md-4 col-sm-2"></h1>
+            <div class="col-md-4 col-sm-2" id="round"></div>
+            <h1 id="greeting2" class="col-md-4 col-sm-2">Computer<br>score: 0</h1>
+        </div>
+        <div>
+            <button class="rock" onclick="playGame('rock')">
+                <h1>(rock)</h1><img class="mx-auto" id=" img1" src="its still MASSIVE.jpg">
+            </button>
+            <button class="paper" onclick="playGame('paper')">
+                <h1>(paper)</h1><img class="mx-auto" id="img2" src="jarvis clip that.jpg">
+            </button>
+            <button class="scissors" onclick="playGame('scissors')">
+                <h1>(scissors)</h1><img class="mx-auto" id="img3" src="leking.jpg">
+            </button>
+        </div>
+        <!--reset button-->
+        <button id="othertun" onclick="Reset()">Play again?</button>
 
         </div>
         <!---Box-->
+
         <div class="row" id="gate">
             <div class="col-4 bruh">
                 <div id="game"></div>
@@ -50,13 +50,15 @@
                 </div>
             </div>
             <div class="col-4 bruh">
-                <div id="game2">Computer picked: </div>
+                <div id="game2">Computer<br>picked: </div>
             </div>
         </div>
+        <div class="row d-flex justify-content-center align-items-center">
+            <h1 id="battle" class="text-center"></h1>
         </div>
-        <h1 id="battle"></h1>
+
     </main>
-    <footer id="feet2" class="text-center container-fluid">
+    <footer id="feet2" class="text-center container-fluid ">
         <div class="">
             <footer id="videos" class="p-3">
                 <a href="https://www.youtube.com/watch?v=TCsIvJB6CNw">Ninja Low Taper Fade Video</a>
